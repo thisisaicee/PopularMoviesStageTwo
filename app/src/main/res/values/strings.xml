@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Popular Movies - Stage Two</string>
+
+    <!--Shared Preferences key-->
+    <string name="pref_sort_key">sort_order</string>
+    <string name="pref_changed_movie">changed_movie</string>
+
+    <!--Menu item name for sorting spinner-->
+    <string name="action_sort">Sorting</string>
+    <string name="action_share">Share</string>
+    <string name="action_settings">Settings</string>
+
+    <!--For Sort Labels-->
+    <string name="pref_sort_label_popular">Most Popular</string>
+    <string name="pref_sort_label_highest_rated">Highest Rated</string>
+    <string name="pref_sort_label_favorite">Favorites</string>
+
+    <string name="movie_item">Movie Poster</string>
+    <string name="video">Video</string>
+    <string name="favorite">Favorite</string>
+    <string name="more">Expand More</string>
+    <string name="status">Status</string>
+    <string name="movie_title">Movie</string>
+
+    <string name="language">en-US</string>
+
+    <!--For Detail Activity-->
+    <string name="release_date">Release Date</string>
+    <string name="user_rating">User Score</string>
+    <string name="user_rating_text" >%1$s / 10</string>
+    <string name="plot_synopsis">Overview</string>
+    <string name="trailers">Trailers</string>
+    <string name="reviews">Reviews</string>
+    <string name="review">Review</string>
+    <string name="no_internet">No internet connection. Swipe to refresh or view your favorite collection</string>
+    <string name="no_favorite">To add a movie to favorites, tap star</string>
+    <string name="no_suitable_app">There is no suitablapp for sharing his device</string>
+    <string name="view_details">Details...</string>
+    <string name="add_to_favorites">Added to favorites</string>
+    <string name="remove_from_favorites">Removed from favorites</string>
+    <string name="connection_error">Connection Error</string>
+
+</resources>

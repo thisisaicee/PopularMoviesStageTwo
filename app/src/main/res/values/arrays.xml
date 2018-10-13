@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sort_spinner_list">
+        <item>@string/pref_sort_label_popular</item>
+        <item>@string/pref_sort_label_highest_rated</item>
+        <item>@string/pref_sort_label_favorite</item>
+    </string-array>
+</resources>

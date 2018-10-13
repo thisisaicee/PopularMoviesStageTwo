@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:background="@color/colorPrimary">
+
+        <data>
+            <variable
+                name="movie"
+                type="net.aicee.popularmoviesstagetwo.model.Movie" />
+
+            <variable
+                name="presenter"
+                type="net.aicee.popularmoviesstagetwo.DetailActivity" />
+        </data>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <ImageView
+                android:id="@+id/poster"
+                android:layout_width="@dimen/poster_width"
+                android:layout_height="@dimen/poster_height"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:layout_marginStart="@dimen/margin_left"
+                android:layout_marginTop="@dimen/margin_left"
+                android:contentDescription="@string/movie_item"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="UnusedAttribute" />
+
+            <TextView
+                android:id="@+id/movieTitleTv"
+                android:layout_width="0dp"
+                android:paddingTop="@dimen/padding_margin_30dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_left"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:layout_marginRight="@dimen/margin_left"
+                android:layout_marginStart="@dimen/margin_left"
+                android:layout_marginTop="@dimen/margin_left"
+                android:text="@{movie.movieTitle}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/poster"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/movie_title" />
+
+            <TextView
+                android:id="@+id/releaseDate"
+                style="@style/DetailLabel"
+                android:text="@string/release_date"
+                app:layout_constraintStart_toEndOf="@+id/poster"
+                app:layout_constraintTop_toBottomOf="@+id/movieTitleTv" />
+
+            <TextView
+                android:id="@+id/releaseDateTv"
+                style="@style/DetailText"
+                android:text="@{presenter.formatReleaseDate(movie.releaseDate)}"
+                app:layout_constraintStart_toEndOf="@+id/poster"
+                app:layout_constraintTop_toBottomOf="@+id/releaseDate"
+                tools:text="2014-09-10" />
+
+            <TextView
+                android:id="@+id/userRatingLabel"
+                style="@style/DetailLabel"
+                android:text="@string/user_rating"
+                app:layout_constraintStart_toEndOf="@+id/poster"
+                app:layout_constraintTop_toBottomOf="@+id/releaseDateTv" />
+
+            <TextView
+                android:id="@+id/userRatingTv"
+                style="@style/DetailText"
+                android:text="@{@string/user_rating_text(movie.userRating)}"
+                app:layout_constraintStart_toEndOf="@+id/poster"
+                app:layout_constraintTop_toBottomOf="@+id/userRatingLabel"
+                tools:text="7/10"/>
+
+            <TextView
+                android:id="@+id/plotSynopsisLabel"
+                style="@style/LabelText"
+                android:text="@string/plot_synopsis"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/poster" />
+
+            <TextView
+                android:id="@+id/plotSynopsisTv"
+                style="@style/DetailText"
+                android:layout_width="0dp"
+                android:layout_marginEnd="@dimen/margin_left"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:layout_marginRight="@dimen/margin_left"
+                android:layout_marginStart="@dimen/margin_left"
+                android:paddingBottom="@dimen/margin_left"
+                android:text="@{movie.plotSynopsis.empty ? presenter.getEnglishPlotSynopsis(movie.movieId) : movie.plotSynopsis}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/plotSynopsisLabel" />
+
+        </android.support.constraint.ConstraintLayout>
+</layout>
